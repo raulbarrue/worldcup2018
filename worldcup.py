@@ -8,7 +8,9 @@ def get_data(url):
 def get_results(data, game):
     gameData = data["fixtures"][game]
 
-    results = {}    
+    results = {}
+    status = gameData["status"]  
+    results["status"] = status  
 
     homeTeam = gameData["homeTeamName"]
     results["homeTeam"] = homeTeam
@@ -32,6 +34,7 @@ def main():
 
     for game in range(n_games):
         results = get_results(data, game)
+        if 
         print(results["homeTeam"], results["goalsHome"], '-', results["goalsAway"], results["awayTeam"])
     
     
