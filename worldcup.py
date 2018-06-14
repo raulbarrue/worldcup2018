@@ -30,9 +30,9 @@ def main():
     data = get_data(url)
     n_games = data["count"]
 
-    for game in n_games:
-    
-    results = get_results(data, 0)
+    for game in range(n_games):
+        results = get_results(data, game)
+        print(results["homeTeam"], results["goalsHome"], '-', results["goalsAway"], results["awayTeam"])
     
     
 
