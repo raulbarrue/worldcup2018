@@ -34,8 +34,11 @@ def main():
 
     for game in range(n_games):
         results = get_results(data, game)
-        if 
-        print(results["homeTeam"], results["goalsHome"], '-', results["goalsAway"], results["awayTeam"])
+        if results["status"] != "SCHEDULED":
+            if None in (results["goalsHome"], results["goalsAway"]):
+                print(results["homeTeam"], "- Game Not Played -", results["awayTeam"])
+            else:
+                print(results["homeTeam"], results["goalsHome"], '-', results["goalsAway"], results["awayTeam"])
     
     
 
